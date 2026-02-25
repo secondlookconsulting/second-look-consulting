@@ -11,6 +11,7 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  console.log("SUBMIT FIRED");   
   e.preventDefault();
 
   try {
