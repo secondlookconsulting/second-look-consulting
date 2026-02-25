@@ -10,39 +10,44 @@ const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-  
-    try {
-      const res = await fetch("https://formspree.io/f/mojnygal", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-        }),
-      });
-  
-      if (!res.ok) {
-        throw new Error("Form submission failed");
-      }
-  
-      toast({
-        title: "Mensaje enviado",
-        description: "Nos pondremos en contacto contigo pronto.",
-      });
-  
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      toast({
-        title: "No se pudo enviar",
-        description: "Intenta de nuevo en unos minutos.",
-        variant: "destructive",
-      });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const formEl = e.currentTarget;
+    const data = new FormData(formEl);
+
+    const res = await fetch("https://formspree.io/f/mojnygal", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    const result = await res.json().catch(() => null);
+
+    if (!res.ok) {
+      console.error("Formspree error:", result);
+      throw new Error("Form submission failed");
     }
-  };
+
+    toast({
+      title: "Mensaje enviado",
+      description: "Nos pondremos en contacto contigo pronto.",
+    });
+
+    formEl.reset();
+    setForm({ name: "", email: "", phone: "", message: "" });
+  } catch (err) {
+    console.error(err);
+    toast({
+      title: "No se pudo enviar",
+      description: "Intenta de nuevo en unos minutos.",
+      variant: "destructive",
+    });
+  }
+};
 
   return (
     <Layout>
@@ -65,6 +70,7 @@ const Contact = () => {
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Nombre</label>
                   <Input
+                    name="name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     required
@@ -74,6 +80,7 @@ const Contact = () => {
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Correo Electrónico</label>
                   <Input
+                    name="email"
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -84,6 +91,7 @@ const Contact = () => {
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Teléfono</label>
                   <Input
+                    name="phone"
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -93,6 +101,7 @@ const Contact = () => {
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Mensaje</label>
                   <Textarea
+                    name="message"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     required
