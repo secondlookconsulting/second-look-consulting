@@ -21,7 +21,9 @@ const Contact = () => {
       <section className="py-20 bg-navy text-navy-foreground">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Contacto</h1>
-          <p className="text-navy-foreground/70 text-lg max-w-2xl">Obtén claridad sobre tu caso hoy. Estamos aquí para ayudarte.</p>
+          <p className="text-navy-foreground/70 text-lg max-w-2xl">
+            Obtén claridad sobre tu caso hoy. Estamos aquí para ayudarte.
+          </p>
         </div>
       </section>
 
@@ -34,21 +36,47 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Nombre</label>
-                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required placeholder="Tu nombre completo" />
+                  <Input
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                    placeholder="Tu nombre completo"
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Correo Electrónico</label>
-                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required placeholder="tu@email.com" />
+                  <Input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    required
+                    placeholder="tu@email.com"
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Teléfono</label>
-                  <Input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="(555) 123-4567" />
+                  <Input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="(555) 123-4567"
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Mensaje</label>
-                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} placeholder="Cuéntanos sobre tu caso..." />
+                  <Textarea
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    required
+                    rows={5}
+                    placeholder="Cuéntanos sobre tu caso..."
+                  />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                >
                   Enviar Mensaje
                 </Button>
               </form>
@@ -59,8 +87,8 @@ const Contact = () => {
               <h2 className="text-2xl font-heading font-bold mb-6 text-foreground">Información de Contacto</h2>
               <div className="space-y-6">
                 {[
-                  { icon: Phone, label: "Teléfono", value: "(555) 123-4567" },
-                  { icon: Mail, label: "Correo Electrónico", value: "info@secondlooklegal.com" },
+                  { icon: Phone, label: "Teléfono", value: "(385) 398-6830" },
+                  { icon: Mail, label: "Correo Electrónico", value: "info@secondlook.consulting" },
                   { icon: MapPin, label: "Ubicación", value: "Sirviendo a la comunidad latina en todo Estados Unidos" },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4">
