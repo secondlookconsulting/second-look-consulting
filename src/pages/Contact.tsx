@@ -20,9 +20,7 @@ const Contact = () => {
     const res = await fetch("https://formspree.io/f/mojnygal", {
       method: "POST",
       body: data,
-      headers: {
-        Accept: "application/json",
-      },
+      headers: { Accept: "application/json" },
     });
 
     const result = await res.json().catch(() => null);
