@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 
 const Footer = () => (
@@ -15,19 +14,19 @@ const Footer = () => (
           <h4 className="font-heading text-lg mb-3">Navegación</h4>
           <div className="flex flex-col gap-2">
             {[
-              { to: "/", label: "Inicio" },
-              { to: "/nosotros", label: "Quiénes Somos" },
-              { to: "/servicios", label: "Servicios" },
-              { to: "/como-funciona", label: "Cómo Funciona" },
-              { to: "/contacto", label: "Contacto" },
+              { to: "#inicio", label: "Inicio" },
+              { to: "#nosotros", label: "Quiénes Somos" },
+              { to: "#servicios", label: "Servicios" },
+              { to: "#como-funciona", label: "Cómo Funciona" },
+              { to: "#contacto", label: "Contacto" },
             ].map((l) => (
-              <Link
+              <a
                 key={l.to}
-                to={l.to}
+                href={l.to}
                 className="text-sm text-navy-foreground/70 hover:text-highlight transition-colors"
               >
                 {l.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
