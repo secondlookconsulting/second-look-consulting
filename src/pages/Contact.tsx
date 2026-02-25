@@ -10,10 +10,38 @@ const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Mensaje enviado", description: "Nos pondremos en contacto contigo pronto." });
-    setForm({ name: "", email: "", phone: "", message: "" });
+  
+    try {
+      const res = await fetch("https://formspree.io/f/mojnygal", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
+      });
+  
+      if (!res.ok) {
+        throw new Error("Form submission failed");
+      }
+  
+      toast({
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+  
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      toast({
+        title: "No se pudo enviar",
+        description: "Intenta de nuevo en unos minutos.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
