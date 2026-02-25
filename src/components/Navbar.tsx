@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-navy text-navy-foreground shadow-lg">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Second Look" className="h-10" />
+          <img src={logo} alt="Second Look" className="h-14" />
         </Link>
 
         {/* Desktop */}
