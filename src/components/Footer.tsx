@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container mx-auto px-4 py-12">
       <div className="grid md:grid-cols-3 gap-8">
         <div>
-          <img src={logo} alt="Second Look" className="h-10 mb-4" />
+          <img src={logo} alt="Second Look" className="h-14 mb-4" />
           <p className="text-sm text-navy-foreground/70 leading-relaxed">
             Te ayudamos a entender tus documentos legales y lo que pasó en tu caso.
           </p>
