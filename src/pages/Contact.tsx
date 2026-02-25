@@ -23,12 +23,11 @@ const Contact = () => {
       headers: { Accept: "application/json" },
     });
 
-    const result = await res.json().catch(() => null);
-
-    if (!res.ok) {
-      console.error("Formspree error:", result);
-      throw new Error("Form submission failed");
-    }
+    const text = await res.text();
+    console.log("Formspree status:", res.status);
+    console.log("Formspree response:", text);
+    
+    if (!res.ok) throw new Error("Form submission failed");
 
     toast({
       title: "Mensaje enviado",
