@@ -107,13 +107,13 @@ const Contact = () => {
                     placeholder="Cuéntanos sobre tu caso..."
                   />
                 </div>
-                <Button
-                  type="submit"
+                <button
+                  type="button"
                   size="lg"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                 >
                   Enviar Mensaje
-                </Button>
+                </button>
               </form>
             </div>
 
