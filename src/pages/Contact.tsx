@@ -108,9 +108,9 @@ const Contact = () => {
                   />
                 </div>
                 <button
-                  type="button"
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                  type="submit"
+                  //size="lg"
+                  //className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                 >
                   Enviar Mensaje
                 </button>
