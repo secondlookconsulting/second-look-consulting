@@ -32,10 +32,22 @@ const Index = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({ title: "Mensaje enviado", description: "Nos pondremos en contacto contigo pronto." });
-    setForm({ name: "", email: "", phone: "", message: "" });
+    try {
+      const data = new FormData(e.currentTarget);
+      const res = await fetch("https://formspree.io/f/mojnygal", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("Form submission failed");
+      toast({ title: "Mensaje enviado", description: "Nos pondremos en contacto contigo pronto." });
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({ title: "No se pudo enviar", description: "Intenta de nuevo en unos minutos.", variant: "destructive" });
+    }
   };
 
   return (
@@ -200,19 +212,19 @@ const Index = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Nombre</label>
-                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required placeholder="Tu nombre completo" />
+                  <Input name="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required placeholder="Tu nombre completo" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Correo Electrónico</label>
-                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required placeholder="tu@email.com" />
+                  <Input name="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required placeholder="tu@email.com" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Teléfono</label>
-                  <Input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="(555) 123-4567" />
+                  <Input name="phone" type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="(555) 123-4567" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1 block">Mensaje</label>
-                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} placeholder="Cuéntanos sobre tu caso..." />
+                  <Textarea name="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} placeholder="Cuéntanos sobre tu caso..." />
                 </div>
                 <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                   Enviar Mensaje
