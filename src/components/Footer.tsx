@@ -21,7 +21,11 @@ const Footer = () => (
               { to: "/como-funciona", label: "Cómo Funciona" },
               { to: "/contacto", label: "Contacto" },
             ].map((l) => (
-              <Link key={l.to} to={l.to} className="text-sm text-navy-foreground/70 hover:text-highlight transition-colors">
+              <Link
+                key={l.to}
+                to={l.to}
+                className="text-sm text-navy-foreground/70 hover:text-highlight transition-colors"
+              >
                 {l.label}
               </Link>
             ))}
@@ -35,7 +39,9 @@ const Footer = () => (
       </div>
       <div className="border-t border-navy-foreground/10 mt-8 pt-6">
         <p className="text-xs text-navy-foreground/50 text-center leading-relaxed max-w-3xl mx-auto">
-          Second Look Legal Consulting provides independent case review and legal information services. We are not a law firm and do not provide legal advice or legal representation. © {new Date().getFullYear()} Second Look. Todos los derechos reservados.
+          Second Look Legal Consulting provides independent case review and legal information services. We are not a law
+          firm and do not provide legal advice or legal representation. © {new Date().getFullYear()} Second Look. Todos
+          los derechos reservados.
         </p>
       </div>
     </div>
