@@ -25,7 +25,7 @@ const Index = () => {
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8">
                 <Link to="/contacto">Solicita una Revisión <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-navy-foreground/30 text-navy-foreground hover:bg-navy-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-navy-foreground/30 text-navy-foreground bg-navy-foreground/10 hover:bg-navy-foreground/10">
                 <Link to="/contacto">Agenda una Consulta</Link>
               </Button>
             </div>
