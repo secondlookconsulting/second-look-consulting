@@ -29,8 +29,8 @@ const Footer = () => (
         </div>
         <div>
           <h4 className="font-heading text-lg mb-3">Contacto</h4>
-          <p className="text-sm text-navy-foreground/70">info@secondlooklegal.com</p>
-          <p className="text-sm text-navy-foreground/70">(555) 123-4567</p>
+          <p className="text-sm text-navy-foreground/70">info@secondlook.consulting</p>
+          <p className="text-sm text-navy-foreground/70">(385) 398-6830</p>
         </div>
       </div>
       <div className="border-t border-navy-foreground/10 mt-8 pt-6">
