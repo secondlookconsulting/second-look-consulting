@@ -6,7 +6,8 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.png";
-import flagScales from "@/assets/flag-scales.png";
+import americanFlag from "@/assets/american-flag.png";
+import lawScale from "@/assets/law-scale.png";
 
 const services = [
   { icon: BookOpen, title: "Traducción de Documentos Legales", desc: "Órdenes del juez, sentencias, mociones, citatorios y notificaciones de audiencia. Reportes policiales, declaraciones juradas. Notificaciones de inmigración, cartas del gobierno, documentos de seguro y más." },
@@ -105,8 +106,9 @@ const Index = () => {
       {/* Flag & Scales / About */}
       <section id="nosotros" className="py-16 bg-muted">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-          <div className="md:w-1/3">
-            <img src={flagScales} alt="American flag and scales of justice" className="rounded-lg shadow-md w-full" />
+          <div className="md:w-1/3 flex gap-4">
+            <img src={americanFlag} alt="American flag" className="rounded-lg shadow-md w-1/2 object-cover" />
+            <img src={lawScale} alt="Scales of justice" className="rounded-lg shadow-md w-1/2 object-contain bg-white p-2" />
           </div>
           <div className="md:w-2/3">
             <h2 className="text-3xl font-heading font-bold mb-4 text-foreground">Quiénes Somos</h2>
