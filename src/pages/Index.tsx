@@ -160,6 +160,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Áreas de Enfoque Legal */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-foreground">Áreas de Enfoque Legal</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mb-10 leading-relaxed">
+            En Second Look trabajamos con documentación y materiales de casos en diversas áreas del derecho. Nuestro enfoque es ayudarte a comprender tus documentos con claridad, organizar la información de tu caso y ofrecer traducción precisa de documentos legales del inglés al español.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Scale, title: "Derecho de Inmigración", desc: "Revisión, explicación y traducción de notificaciones migratorias, documentos de la corte de inmigración, solicitudes, decisiones y correspondencia oficial." },
+              { icon: Users, title: "Derecho Familiar", desc: "Documentos relacionados con divorcio, custodia, manutención, órdenes de protección y procesos de la corte familiar." },
+              { icon: Award, title: "Derecho Comercial / Empresarial", desc: "Contratos comerciales, acuerdos entre socios, documentos corporativos y disputas contractuales." },
+              { icon: Shield, title: "Derecho Penal", desc: "Órdenes judiciales, sentencias, acuerdos, reportes policiales y documentos procesales." },
+              { icon: FileText, title: "Asuntos Civiles y Otros Procesos Legales", desc: "Demandas civiles, reclamaciones de seguros, disputas contractuales y notificaciones gubernamentales." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition-shadow">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+                  <Icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">{title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* What we don't do */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4 max-w-2xl">
