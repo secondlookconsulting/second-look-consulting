@@ -14,6 +14,7 @@ const services = [
   { icon: Clock, title: "Línea de Tiempo", desc: "Creamos una línea de tiempo de tu caso — qué pasó y cuándo — para que veas el panorama completo." },
   { icon: HelpCircle, title: "Preparación de Preguntas", desc: "Te ayudamos a preparar preguntas inteligentes para tu abogado antes de tu próxima reunión." },
   { icon: Receipt, title: "Revisión de Facturas", desc: "Si tienes dudas sobre lo que te están cobrando, revisamos tus facturas legales." },
+  { icon: BookOpen, title: "Traducción de Documentos Legales", desc: "Órdenes del juez, sentencias, mociones, citatorios y notificaciones de audiencia. Contratos con abogados, facturas legales y acuerdos. Reportes policiales, documentos de descubrimiento, declaraciones juradas. Notificaciones de inmigración, cartas del gobierno y documentos de seguro." },
 ];
 
 const notDo = [
