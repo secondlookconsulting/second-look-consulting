@@ -9,12 +9,12 @@ import heroBg from "@/assets/hero-bg.png";
 import flagScales from "@/assets/flag-scales.png";
 
 const services = [
+  { icon: BookOpen, title: "Traducción de Documentos Legales", desc: "Órdenes del juez, sentencias, mociones, citatorios y notificaciones de audiencia. Contratos con abogados, facturas legales. Reportes policiales, declaraciones juradas. Notificaciones de inmigración, cartas del gobierno y documentos de seguro." },
   { icon: FileText, title: "Explicaciones de Documentos", desc: "Explicaciones claras y sencillas de documentos de la corte, traducidas a un lenguaje que puedas entender." },
   { icon: FolderOpen, title: "Organización de Expediente", desc: "Organización completa de tu expediente para que tengas todo en orden." },
   { icon: Clock, title: "Línea de Tiempo", desc: "Creamos una línea de tiempo de tu caso — qué pasó y cuándo — para que veas el panorama completo." },
   { icon: HelpCircle, title: "Preparación de Preguntas", desc: "Te ayudamos a preparar preguntas inteligentes para tu abogado antes de tu próxima reunión." },
   { icon: Receipt, title: "Revisión de Facturas", desc: "Si tienes dudas sobre lo que te están cobrando, revisamos tus facturas legales." },
-  { icon: BookOpen, title: "Traducción de Documentos Legales", desc: "Órdenes del juez, sentencias, mociones, citatorios y notificaciones de audiencia. Contratos con abogados, facturas legales y acuerdos. Reportes policiales, documentos de descubrimiento, declaraciones juradas. Notificaciones de inmigración, cartas del gobierno y documentos de seguro." },
 ];
 
 const notDo = [
