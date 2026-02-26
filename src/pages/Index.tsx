@@ -108,7 +108,7 @@ const Index = () => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/3 flex gap-4">
             <img src={americanFlag} alt="American flag" className="rounded-lg shadow-md w-1/2 object-cover" />
-            <img src={lawScale} alt="Scales of justice" className="rounded-lg shadow-md w-1/2 object-contain bg-white p-2" />
+            <img src={lawScale} alt="Scales of justice" className="rounded-lg shadow-md w-1/2 object-contain" />
           </div>
           <div className="md:w-2/3">
             <h2 className="text-3xl font-heading font-bold mb-4 text-foreground">Quiénes Somos</h2>
